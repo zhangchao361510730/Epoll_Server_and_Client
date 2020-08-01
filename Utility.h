@@ -69,7 +69,7 @@ int sendBroadcastMessage(int clientfd)
         {
             if(*it!=clientfd)
             {
-                if(send(*it,message,BUF_SIZE,0)<0)
+                if(send(*it,message,strlen(message)+1,0)<0)
                 {
                     perror("sendBroadcastMessage error");exit(-1);
                 }
